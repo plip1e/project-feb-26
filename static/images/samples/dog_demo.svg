@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Dog Sample</title>
+  <desc id="desc">Placeholder sample image for dog prediction.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a2b5b"/>
+      <stop offset="100%" stop-color="#1b1530"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <circle cx="360" cy="200" r="100" fill="#d1bfa5"/>
+  <ellipse cx="280" cy="165" rx="45" ry="70" fill="#b49570"/>
+  <ellipse cx="440" cy="165" rx="45" ry="70" fill="#b49570"/>
+  <circle cx="325" cy="195" r="10" fill="#1d212a"/>
+  <circle cx="395" cy="195" r="10" fill="#1d212a"/>
+  <ellipse cx="360" cy="228" rx="20" ry="14" fill="#1d212a"/>
+  <text x="360" y="380" fill="#f4f7ff" font-size="42" font-family="Segoe UI, Trebuchet MS, sans-serif" text-anchor="middle">Dog Sample</text>
+</svg>

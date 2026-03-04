@@ -1,0 +1,23 @@
+[
+    {
+        "image_url": "/static/images/samples/cat_demo.svg",
+        "predicted_label": "Cat",
+        "confidence": 0.981,
+        "actual_label": "Cat",
+        "notes": "Correct prediction with very high confidence."
+    },
+    {
+        "image_url": "/static/images/samples/dog_demo.svg",
+        "predicted_label": "Dog",
+        "confidence": 0.944,
+        "actual_label": "Dog",
+        "notes": "Strong confidence and correct class."
+    },
+    {
+        "image_url": "/static/images/samples/fox_demo.svg",
+        "predicted_label": "Dog",
+        "confidence": 0.612,
+        "actual_label": "Fox",
+        "notes": "Intentional near-miss example for discussion."
+    }
+]

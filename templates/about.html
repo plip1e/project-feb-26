@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ main_title }}{% endblock title %}
+
+{% block content %}
+    <section class="hero-panel">
+        <h1>{{ main_title }}</h1>
+        <p>
+            Technical stats from the saved training history and model metadata for your presentation talking points.
+        </p>
+    </section>
+
+    <section id="about-stats-section" class="panel-block" aria-labelledby="about-stats-heading">
+        <div class="section-head">
+            <h2 id="about-stats-heading">Model Stats</h2>
+            <button id="refresh-about-stats-btn" class="btn-primary" type="button">Refresh Stats</button>
+        </div>
+
+        <div id="about-stats-cards" class="stats-grid" aria-live="polite">
+            <article class="stat-card">
+                <h3>Loading...</h3>
+                <p>Fetching model stats.</p>
+            </article>
+        </div>
+
+        <div class="table-wrap">
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Metric</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody id="about-stats-table-body">
+                    <tr>
+                        <td colspan="2">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="about-stats-message" class="muted-note">
+            Source files: `histories/model-history.np*` and `models/model.keras`.
+        </p>
+    </section>
+{% endblock content %}

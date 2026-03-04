@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Default ERR{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% block stylesheet %}{{ url_for('static', filename='styles/global.css') }}{% endblock %}">
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a class="brand-link" href="{{ url_for('index') }}">Keras Demo</a>
+
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="site-nav-list"
+                >
+                    Menu
+                </button>
+
+                <ul id="site-nav-list" class="nav-list">
+                    {# Add/edit top navigation links in NAV_ITEMS inside app.py #}
+                    {% for item in nav_items %}
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {% if current_endpoint == item.endpoint %}is-active{% endif %}"
+                                href="{{ item.href }}"
+                            >
+                                {{ item.label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
+
+        <main class="page-shell">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="site-footer">
+            <small>Presentation app for precomputed model insights.</small>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" defer></script>
+        <script src="{% block scriptsheet %}{{ url_for('static', filename='scripts/global.js') }}{% endblock %}" defer></script>
+    </body>
+</html>

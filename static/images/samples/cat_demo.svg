@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Cat Sample</title>
+  <desc id="desc">Placeholder sample image for cat prediction.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#243b55"/>
+      <stop offset="100%" stop-color="#141e30"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <circle cx="360" cy="190" r="95" fill="#d9dde6"/>
+  <circle cx="320" cy="180" r="10" fill="#1d212a"/>
+  <circle cx="400" cy="180" r="10" fill="#1d212a"/>
+  <polygon points="300,105 330,145 270,145" fill="#d9dde6"/>
+  <polygon points="420,105 450,145 390,145" fill="#d9dde6"/>
+  <ellipse cx="360" cy="210" rx="16" ry="10" fill="#1d212a"/>
+  <text x="360" y="380" fill="#f4f7ff" font-size="42" font-family="Segoe UI, Trebuchet MS, sans-serif" text-anchor="middle">Cat Sample</text>
+</svg>

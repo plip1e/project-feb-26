@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}{{ main_title }}{% endblock title %}
+
+{% block content %}
+    <section id="home-presentation" class="hero-panel presentation-hero">
+        <p class="eyebrow">Presentation Mode</p>
+        <h1>{{ main_title }}</h1>
+        <p>
+            Visual summary of model history, prediction behavior, and live JPEG testing using the currently loaded model artifact.
+        </p>
+        <div class="hero-badges">
+            <span id="model-status-badge" class="status-chip">Model status: checking...</span>
+            <span id="history-status-badge" class="status-chip">History status: checking...</span>
+        </div>
+    </section>
+
+    <section class="panel-block" aria-labelledby="highlights-heading">
+        <div class="section-head">
+            <h2 id="highlights-heading">Highlights</h2>
+            <button id="refresh-home-data-btn" class="btn-primary" type="button">Refresh Home Data</button>
+        </div>
+        <div id="home-highlights-grid" class="stats-grid" aria-live="polite">
+            <article class="stat-card">
+                <h3>Loading...</h3>
+                <p>Fetching key metrics.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="panel-block" aria-labelledby="charts-heading">
+        <div class="section-head">
+            <h2 id="charts-heading">Training Charts</h2>
+        </div>
+        <div class="chart-grid">
+            <article class="chart-card">
+                <h3>Accuracy and Loss by Epoch</h3>
+                <div class="chart-canvas-wrap">
+                    <canvas id="accuracy-loss-chart" aria-label="Accuracy and loss chart"></canvas>
+                </div>
+                <p id="accuracy-loss-note" class="chart-note">Loading chart data...</p>
+            </article>
+            <article class="chart-card">
+                <h3>Learning Rate by Epoch</h3>
+                <div class="chart-canvas-wrap">
+                    <canvas id="learning-rate-chart" aria-label="Learning rate chart"></canvas>
+                </div>
+                <p id="learning-rate-note" class="chart-note">Loading chart data...</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="panel-block" aria-labelledby="samples-heading">
+        <div class="section-head">
+            <h2 id="samples-heading">Sample Predictions</h2>
+        </div>
+        <div id="sample-results-grid" class="sample-grid" aria-live="polite">
+            <article class="sample-card">
+                <div class="img-fallback">Loading...</div>
+                <div class="sample-meta">
+                    <p>Fetching sample results.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="panel-block" aria-labelledby="upload-heading">
+        <div class="section-head">
+            <h2 id="upload-heading">Test Your Own JPEG</h2>
+        </div>
+        <form id="predict-upload-form" class="upload-form">
+            <label for="predict-image-input">Choose a JPEG image:</label>
+            <input id="predict-image-input" name="image" type="file" accept=".jpg,.jpeg,image/jpeg" required>
+            <button id="predict-submit-btn" class="btn-primary" type="submit">Run Prediction</button>
+        </form>
+
+        <div id="predict-result-card" class="predict-result" aria-live="polite">
+            <p>Upload a `.jpg` or `.jpeg` file to test prediction.</p>
+        </div>
+    </section>
+
+    <section id="diagnostic-panel" class="panel-block diagnostic-panel is-hidden" aria-live="polite">
+        <h2>Diagnostics</h2>
+        <pre id="diagnostic-content"></pre>
+    </section>
+{% endblock content %}
