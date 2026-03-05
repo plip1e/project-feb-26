@@ -6,12 +6,16 @@
         <title>{% block title %}Default ERR{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/animal.png') }}">
         <link rel="stylesheet" href="{% block stylesheet %}{{ url_for('static', filename='styles/global.css') }}{% endblock %}">
     </head>
     <body>
         <header class="site-header">
             <nav class="site-nav" aria-label="Primary navigation">
-                <a class="brand-link" href="{{ url_for('index') }}">Keras Demo</a>
+                <a class="brand-link" href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/animal.png') }}" alt="Animal" class="brand-logo" style="height: 28px; width: auto; vertical-align: middle; margin-right: 8px;" />
+                    Animal Classifier with Keras
+                </a>
 
                 <button
                     class="nav-toggle"
