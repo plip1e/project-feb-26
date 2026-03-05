@@ -1,4 +1,5 @@
-raw-img/*
+raw-img/
+data/test-imgs/
 
 __pycache__/
 *.py[cod]

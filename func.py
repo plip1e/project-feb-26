@@ -191,15 +191,16 @@ def download_dataset(path:str, seed:int=40):
             dataset_path = raw_img_candidate
     else:
         path = kagglehub.dataset_download("alessiocorrado99/animals10")
-        destination = os.path.join(os.path.curdir,'raw-img')
+        destination = os.path.join(os.path.curdir,r'raw-img\\raw-img')
         os.makedirs(destination, exist_ok=True)
 
         for item in os.listdir(path):
             src = os.path.join(path, item)
             dst = os.path.join(destination, item)
             shutil.move(src, dst)
+        shutil.rmtree(path, ignore_errors=True)
         print('Working locally')
-        dataset_path = os.path.join(path, 'raw-img')
+        dataset_path = destination
 
     print("Path to dataset files:", dataset_path)
     dataset = keras.utils.image_dataset_from_directory(
